@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
+
+// Fade-in animation
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      maxW="container.md"
+      mx="auto"
+      mt={10}
+      px={4}
+      animation={`${fadeIn} 1s ease forwards`}
+    >
+      <Heading mb={4}>Chakra UI is Working!</Heading>
+      <Text mb={4}>
+        If you see this styled text, you’re good to go.
+      </Text>
+      <Button colorScheme="teal">Test Button</Button>
+    </Box>
   );
 }
 
