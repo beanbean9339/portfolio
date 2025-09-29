@@ -1,30 +1,38 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Box, Heading } from "@chakra-ui/react";
+
+// Import components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-// Import your pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Hero from "./components/Hero";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
+import DrawingsSection from "./components/DrawingsSection";
+import PhotographySection from "./components/PhotographySection";
+import PodcastSection from "./components/PodcastSection";
+import ProjectSection from "./components/ProjectSection";
+import SkillsSection from "./components/SkillsSection";
+import VideoEditingSection from "./components/VideoEditingSection";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <Box>
+      <Navbar />
+
+      <Hero />
+
+      {/* Use placeholders for now */}
+      <AboutSection />
+      <SkillsSection />
+      <ProjectSection />
+      <DrawingsSection />
+      <PhotographySection />
+      <VideoEditingSection />
+      <PodcastSection />
+      <ContactSection />
+
+      <Footer />
+    </Box>
   );
 }
 

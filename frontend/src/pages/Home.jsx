@@ -1,12 +1,27 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
+import Hero from "../components/Hero";
+import AboutSection from "../components/AboutSection";
+import ProjectSection from "../components/ProjectSection";
+import PhotographySection from "../components/PhotographySection";
+import DrawingsSection from "../components/DrawingsSection";
+import PodcastSection from "../components/PodcastSection";
+import VideoEditingSection from "../components/VideoEditingSection";
+import SkillSection from "../components/SkillSection";
+import ContactSection from "../components/ContactSection";
 
-function Home() {
+export default function Home() {
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Welcome to my portfolio!</h1>
-      <p>This is Isabella Lo’s personal portfolio. Explore my projects and learn more about me.</p>
-    </div>
+    <Box as="main" bg="gray.50">
+      <Hero />
+      <AboutSection />
+      <ProjectSection />
+      <PhotographySection />
+      <DrawingsSection />
+      <PodcastSection />
+      <VideoEditingSection />
+      <SkillSection />
+      <ContactSection />
+    </Box>
   );
 }
-
-export default Home;

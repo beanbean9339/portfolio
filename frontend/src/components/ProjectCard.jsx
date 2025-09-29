@@ -1,13 +1,29 @@
 import React from "react";
+import { Box, Image, Heading, Text, Link, VStack } from "@chakra-ui/react";
 
-function ProjectCard({ title, description, link }) {
+export default function ProjectCard({ title, description, imageUrl, projectUrl }) {
   return (
-    <div style={{ border: "1px solid #ddd", padding: "1rem", borderRadius: "8px", margin: "1rem 0" }}>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      {link && <a href={link} target="_blank" rel="noopener noreferrer">View Project</a>}
-    </div>
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      bg="white"
+      boxShadow="md"
+      _hover={{ transform: "scale(1.03)", transition: "0.3s" }}
+    >
+      {imageUrl && (
+        <Image src={imageUrl} alt={title} objectFit="cover" w="100%" h="200px" />
+      )}
+      <VStack align="start" p={6} spacing={3}>
+        <Heading fontSize="xl">{title}</Heading>
+        <Text color="gray.600">{description}</Text>
+        {projectUrl && (
+          <Link href={projectUrl} color="teal.500" fontWeight="bold" isExternal>
+            View Project
+          </Link>
+        )}
+      </VStack>
+    </Box>
   );
 }
-
-export default ProjectCard;

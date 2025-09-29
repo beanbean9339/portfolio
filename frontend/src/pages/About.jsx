@@ -1,12 +1,11 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
+import AboutSection from "../components/AboutSection";
 
-function About() {
+export default function About() {
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>About Me</h1>
-      <p>Hello! I’m Isabella, a computer science student with a passion for tech, design, and building meaningful projects.</p>
-    </div>
+    <Box as="main" bg="gray.50" minH="100vh">
+      <AboutSection />
+    </Box>
   );
 }
-
-export default About;

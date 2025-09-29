@@ -1,11 +1,11 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import ContactSection from "../components/ContactSection";
+import DrawingsSection from "../components/DrawingsSection";
 
-export default function Contact() {
+export default function Drawings() {
   return (
     <Box as="main" bg="gray.50" minH="100vh" p={4}>
-      <ContactSection />
+      <DrawingsSection />
     </Box>
   );
 }
