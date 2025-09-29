@@ -1,28 +1,30 @@
 import React from "react";
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-// Fade-in animation
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
+// Import your pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Box
-      maxW="container.md"
-      mx="auto"
-      mt={10}
-      px={4}
-      animation={`${fadeIn} 1s ease forwards`}
-    >
-      <Heading mb={4}>Chakra UI is Working!</Heading>
-      <Text mb={4}>
-        If you see this styled text, you’re good to go.
-      </Text>
-      <Button colorScheme="teal">Test Button</Button>
-    </Box>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
